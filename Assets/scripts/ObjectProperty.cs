@@ -5,5 +5,5 @@ using UnityEngine;
 public class ObjectProperty : MonoBehaviour
 {
     public float mass;
-    public Vector2 initialVelocity, ;
+    public Vector2 initialVelocity;
 }
