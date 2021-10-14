@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class dragging : MonoBehaviour
 {
@@ -21,9 +22,25 @@ public class dragging : MonoBehaviour
             RaycastHit2D hit= Physics2D.Raycast(ray, Vector2.zero);
             if (hit.collider!=null)
             {
-                selectedObject=hit.transform.gameObject;
-                offset = new Vector2(hit.transform.position.x,hit.transform.position.y) - ray;
+
+                if (selectedObject != null && !selectedObject.Equals(hit.transform.gameObject))
+                {    
+                    selectedObject.GetComponent<outline>().OnDisable();
+                }
+                selectedObject = hit.transform.gameObject;
+                offset = new Vector2(hit.transform.position.x, hit.transform.position.y) - ray;
                 selected = true;
+
+                selectedObject.GetComponent<outline>().OnEnable();
+                
+            }
+            else
+            {
+                selected = false;
+                if (selectedObject != null)
+                {
+                    selectedObject.GetComponent<outline>().OnDisable();
+                }
             }
 
         }
