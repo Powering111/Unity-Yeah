@@ -526,3 +526,974 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002086 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.645 seconds
+Domain Reload Profiling:
+	ReloadAssembly (645ms)
+		BeginReloadAssembly (85ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (522ms)
+			LoadAssemblies (54ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (167ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (216ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (36ms)
+				ProcessInitializeOnLoadAttributes (169ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.2 MB.
+System memory in use after: 96.3 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2599.
+Total: 2.677200 ms (FindLiveObjects: 0.181100 ms CreateObjectMapping: 0.061300 ms MarkObjects: 2.420100 ms  DeleteObjects: 0.014000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002041 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.654 seconds
+Domain Reload Profiling:
+	ReloadAssembly (655ms)
+		BeginReloadAssembly (77ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (538ms)
+			LoadAssemblies (53ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (164ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (229ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (41ms)
+				ProcessInitializeOnLoadAttributes (177ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.2 MB.
+System memory in use after: 96.3 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2602.
+Total: 2.446000 ms (FindLiveObjects: 0.179800 ms CreateObjectMapping: 0.051500 ms MarkObjects: 2.200000 ms  DeleteObjects: 0.014000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1003.011693 seconds.
+  path: Assets/images/bg.png
+  artifactKey: Guid(7aa7fb06f352ce545aa425fef687ae23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/images/bg.png using Guid(7aa7fb06f352ce545aa425fef687ae23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a74a0b7c5badcefae68b6896b4b62e0') in 0.050264 seconds 
+  Import took 0.053098 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002200 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.655 seconds
+Domain Reload Profiling:
+	ReloadAssembly (656ms)
+		BeginReloadAssembly (81ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (537ms)
+			LoadAssemblies (53ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (177ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (220ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (40ms)
+				ProcessInitializeOnLoadAttributes (169ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.2 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2608.
+Total: 2.549400 ms (FindLiveObjects: 0.196800 ms CreateObjectMapping: 0.051100 ms MarkObjects: 2.284100 ms  DeleteObjects: 0.016600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002110 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.649 seconds
+Domain Reload Profiling:
+	ReloadAssembly (649ms)
+		BeginReloadAssembly (86ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (525ms)
+			LoadAssemblies (56ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (168ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (212ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (37ms)
+				ProcessInitializeOnLoadAttributes (164ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2611.
+Total: 2.658600 ms (FindLiveObjects: 0.184800 ms CreateObjectMapping: 0.065400 ms MarkObjects: 2.394300 ms  DeleteObjects: 0.013400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004706 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.651 seconds
+Domain Reload Profiling:
+	ReloadAssembly (651ms)
+		BeginReloadAssembly (79ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (534ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (168ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (218ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (38ms)
+				ProcessInitializeOnLoadAttributes (170ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2614.
+Total: 2.747400 ms (FindLiveObjects: 0.179900 ms CreateObjectMapping: 0.062800 ms MarkObjects: 2.489300 ms  DeleteObjects: 0.014700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002103 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.634 seconds
+Domain Reload Profiling:
+	ReloadAssembly (635ms)
+		BeginReloadAssembly (71ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (526ms)
+			LoadAssemblies (53ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (164ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (213ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (37ms)
+				ProcessInitializeOnLoadAttributes (165ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2617.
+Total: 2.693400 ms (FindLiveObjects: 0.203900 ms CreateObjectMapping: 0.066300 ms MarkObjects: 2.408000 ms  DeleteObjects: 0.014500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002128 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.665 seconds
+Domain Reload Profiling:
+	ReloadAssembly (665ms)
+		BeginReloadAssembly (94ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (528ms)
+			LoadAssemblies (53ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (162ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (226ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (37ms)
+				ProcessInitializeOnLoadAttributes (178ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2620.
+Total: 2.452800 ms (FindLiveObjects: 0.154900 ms CreateObjectMapping: 0.042400 ms MarkObjects: 2.241300 ms  DeleteObjects: 0.013600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002082 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.649 seconds
+Domain Reload Profiling:
+	ReloadAssembly (649ms)
+		BeginReloadAssembly (87ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (525ms)
+			LoadAssemblies (54ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (166ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (214ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (37ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2623.
+Total: 2.461600 ms (FindLiveObjects: 0.172100 ms CreateObjectMapping: 0.050000 ms MarkObjects: 2.226100 ms  DeleteObjects: 0.012600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002224 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.709 seconds
+Domain Reload Profiling:
+	ReloadAssembly (709ms)
+		BeginReloadAssembly (92ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (573ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (179ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (243ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (35ms)
+				ProcessInitializeOnLoadAttributes (194ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2626.
+Total: 2.852000 ms (FindLiveObjects: 0.223100 ms CreateObjectMapping: 0.102200 ms MarkObjects: 2.510200 ms  DeleteObjects: 0.015900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002226 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.774 seconds
+Domain Reload Profiling:
+	ReloadAssembly (774ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (619ms)
+			LoadAssemblies (68ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (181ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (268ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (209ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2629.
+Total: 2.544400 ms (FindLiveObjects: 0.183700 ms CreateObjectMapping: 0.046000 ms MarkObjects: 2.300600 ms  DeleteObjects: 0.013300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002153 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.654 seconds
+Domain Reload Profiling:
+	ReloadAssembly (655ms)
+		BeginReloadAssembly (79ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (536ms)
+			LoadAssemblies (52ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (174ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (222ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (37ms)
+				ProcessInitializeOnLoadAttributes (174ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2632.
+Total: 2.645300 ms (FindLiveObjects: 0.153900 ms CreateObjectMapping: 0.051700 ms MarkObjects: 2.425600 ms  DeleteObjects: 0.013500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002118 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.723 seconds
+Domain Reload Profiling:
+	ReloadAssembly (723ms)
+		BeginReloadAssembly (76ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (605ms)
+			LoadAssemblies (59ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (185ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (263ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (42ms)
+				ProcessInitializeOnLoadAttributes (209ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2635.
+Total: 2.429000 ms (FindLiveObjects: 0.169900 ms CreateObjectMapping: 0.050800 ms MarkObjects: 2.193500 ms  DeleteObjects: 0.014000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002218 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+log4net:ERROR Error while loading XML configuration
+System.Xml.XmlException: ' ' is an unexpected token. The expected token is ';'. Line 3, position 34.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x00027] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Throw (System.String res, System.String[] args) [0x00029] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.String expectedToken1, System.String expectedToken2) [0x00036] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken1, System.String expectedToken2) [0x0000c] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken (System.Int32 pos, System.String expectedToken) [0x00000] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.HandleEntityReference (System.Boolean isInAttributeValue, System.Xml.XmlTextReaderImpl+EntityExpandType expandType, System.Int32& charRefEndPos) [0x000e5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow (System.Int32 curPos, System.Char quoteChar, System.Xml.XmlTextReaderImpl+NodeData attr) [0x002a5] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseAttributes () [0x0039a] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElement () [0x001df] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.ParseElementContent () [0x0016f] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00085] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadNode (System.Boolean skipOverWhitespace) [0x0025b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.LoadDocSequence (System.Xml.XmlDocument parentDoc) [0x0001b] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlLoader.Load (System.Xml.XmlDocument doc, System.Xml.XmlReader reader, System.Boolean preserveWhitespace) [0x000b4] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at System.Xml.XmlDocument.Load (System.Xml.XmlReader reader) [0x0002e] in <0f9699188f0c414ea6fb5557f5c16d15>:0 
+  at log4net.Config.XmlConfigurator.InternalConfigure (log4net.Repository.ILoggerRepository repository, System.IO.Stream configStream) [0x00063] in <e1a77b5dfa0c4a1f8ba616c017f5e0b8>:0 
+Mono: successfully reloaded assembly
+- Completed reload, in  0.748 seconds
+Domain Reload Profiling:
+	ReloadAssembly (748ms)
+		BeginReloadAssembly (88ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (617ms)
+			LoadAssemblies (61ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (185ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (270ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (214ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2087 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 96.3 MB.
+System memory in use after: 96.5 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2638.
+Total: 2.628600 ms (FindLiveObjects: 0.207200 ms CreateObjectMapping: 0.044500 ms MarkObjects: 2.362100 ms  DeleteObjects: 0.014100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
