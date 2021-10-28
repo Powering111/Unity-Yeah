@@ -8,9 +8,37 @@ public class dragging : MonoBehaviour
     private bool selected = false;
     private Vector2 offset;
     private GameObject selectedObject;
+
+    public GameObject panelObj;
+
     void Start()
     {
         
+    }
+
+    void select(GameObject selected)
+    {
+
+        selectedObject = selected;
+        
+        selectedObject.GetComponent<outline>().OnEnable();
+
+        gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
+
+        panelObj.GetComponent<panel>().selectionChange(selectedObject);
+
+        this.selected = true;
+
+    }
+
+    void deselect()
+    {
+        if (selectedObject != null)
+        {
+            selectedObject.GetComponent<outline>().OnDisable();
+        }
+
+        selected = false;
     }
 
     void Update()
@@ -29,22 +57,15 @@ public class dragging : MonoBehaviour
                 {    
                     selectedObject.GetComponent<outline>().OnDisable();
                 }
-                selectedObject = hit.transform.gameObject;
+                select(hit.transform.gameObject);
                 offset = new Vector2(hit.transform.position.x, hit.transform.position.y) - ray;
-                selected = true;
 
-                selectedObject.GetComponent<outline>().OnEnable();
-
-                gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
             }
             else
             {
                 // void is hit!
-                selected = false;
-                if (selectedObject != null)
-                {
-                    selectedObject.GetComponent<outline>().OnDisable();
-                }
+                deselect();
+                
             }
 
         }
