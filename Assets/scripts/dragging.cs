@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.EventSystems;
 
 public class dragging : MonoBehaviour
 {
@@ -39,11 +40,20 @@ public class dragging : MonoBehaviour
             }
             else
             {
-                // void is hit!
-                selected = false;
-                if (selectedObject != null)
+                // UI is hit!
+                if (EventSystem.current.IsPointerOverGameObject())
                 {
-                    selectedObject.GetComponent<outline>().OnDisable();
+                    Debug.Log("UI is hit!");
+                }
+                else
+                {
+                    // void is hit!
+
+                    selected = false;
+                    if (selectedObject != null)
+                    {
+                        selectedObject.GetComponent<outline>().OnDisable();
+                    }
                 }
             }
 
