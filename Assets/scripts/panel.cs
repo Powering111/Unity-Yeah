@@ -26,6 +26,15 @@ public class panel : MonoBehaviour
     {
         float mass;
         float.TryParse(massInput.GetComponent<InputField>().text, out mass);
+        if(mass==0)mass=1;
         selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+    }
+
+    public void hide(){
+        gameObject.SetActive(false);
+    }
+
+    public void show(){
+        gameObject.SetActive(true);
     }
 }
