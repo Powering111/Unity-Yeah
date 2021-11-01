@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Analyser : MonoBehaviour
 {
+
+    private Vector3 lastVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,8 @@ public class Analyser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 vel=gameObject.GetComponent<Rigidbody2D>().velocity;
-        Debug.Log(vel);
+        Vector3 velocity=gameObject.GetComponent<Rigidbody2D>().velocity;
+        Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;;
+        Debug.Log(acceleration);
     }
 }
