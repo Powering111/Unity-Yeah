@@ -10,13 +10,19 @@ public class dragging : MonoBehaviour
     private Vector2 offset;
     private GameObject selectedObject;
 
+    public bool active = false;
     public GameObject panelObj;
 
-    void Start()
+    public void Activate()
     {
-        
+        gameObject.GetComponent<ObjectGenerator>().play();
+        active = true;
     }
-
+    public void Deactivate()
+    {
+        gameObject.GetComponent<ObjectGenerator>().stop();
+        active = false;
+    }
     void select(GameObject selected)
     {
 
@@ -81,7 +87,7 @@ public class dragging : MonoBehaviour
                     deselect();
                 }
             }
-
+            
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -91,7 +97,7 @@ public class dragging : MonoBehaviour
         else if (selected && Input.GetMouseButton(0))
         {
             // mouse dragging...
-            if (selected)
+            if (selected && !active)
             {
                 //object is selected
                 // moving object to mouse position

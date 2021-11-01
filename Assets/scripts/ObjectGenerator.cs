@@ -97,4 +97,12 @@ public class ObjectGenerator : MonoBehaviour
             Children.gameObject.GetComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Dynamic;
         }
     }
+    public void stop()
+    {
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            Transform Children = gameObject.transform.GetChild(i);
+            Children.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        }
+    }
 }
