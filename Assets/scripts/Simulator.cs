@@ -24,19 +24,18 @@ public class Simulator : MonoBehaviour
         if (!active) {
             for (int i = 0; i < objectGenerator.transform.childCount; i++)
             {
-                Transform Children = objectGenerator.transform.GetChild(i).GetChild(0);
-                
-                Rigidbody2D rd = Children.gameObject.GetComponent<Rigidbody2D>();
-                if (rd != null)
-                { 
-                    rd.bodyType = RigidbodyType2D.Dynamic; 
+                Transform Children = objectGenerator.transform.GetChild(i);
+                Rope rope = Children.gameObject.GetComponent<Rope>();
+                if (rope != null)
+                {
+                    rope.Activate();
                 }
                 else
                 {
-                    Rope rope = Children.gameObject.GetComponent<Rope>();
-                    if(rope != null)
+                    Rigidbody2D rd = Children.GetChild(0).gameObject.GetComponent<Rigidbody2D>();
+                    if (rd != null)
                     {
-                        rope.Activate();
+                        rd.bodyType = RigidbodyType2D.Dynamic;
                     }
                 }
             }
@@ -58,18 +57,18 @@ public class Simulator : MonoBehaviour
         {
             for (int i = 0; i < objectGenerator.transform.childCount; i++)
             {
-                Transform Children = objectGenerator.transform.GetChild(i).GetChild(0);
-                Rigidbody2D rd = Children.gameObject.GetComponent<Rigidbody2D>();
-                if (rd != null)
+                Transform Children = objectGenerator.transform.GetChild(i);
+                Rope rope = Children.gameObject.GetComponent<Rope>();
+                if (rope != null)
                 {
-                    rd.bodyType = RigidbodyType2D.Static;
+                    rope.Deactivate();
                 }
                 else
                 {
-                    Rope rope = Children.gameObject.GetComponent<Rope>();
-                    if (rope != null)
+                    Rigidbody2D rd = Children.GetChild(0).gameObject.GetComponent<Rigidbody2D>();
+                    if (rd != null)
                     {
-                        rope.Deactivate();
+                        rd.bodyType = RigidbodyType2D.Static;
                     }
                 }
             }
