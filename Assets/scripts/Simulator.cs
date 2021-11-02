@@ -14,10 +14,16 @@ public class Simulator : MonoBehaviour
             for (int i = 0; i < objectGenerator.transform.childCount; i++)
             {
                 Transform Children = objectGenerator.transform.GetChild(i);
-                Children.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+                Rigidbody2D rd = Children.gameObject.GetComponent<Rigidbody2D>();
+                if (rd != null)
+                { 
+                    rd.bodyType = RigidbodyType2D.Dynamic; 
+                }
             }
             active = true;
-            objectGenerator.GetComponent<ObjectGenerator>().deactivate();
+            objectGenerator.GetComponent<ObjectGenerator>().Deactivate();
+            objectGenerator.GetComponent<dragging>().Deactivate();
 
             playBtn.GetComponent<Image>().sprite = pauseBtnImg;
             playBtn.GetComponent<Button>().onClick.RemoveListener(play);
@@ -33,10 +39,15 @@ public class Simulator : MonoBehaviour
             for (int i = 0; i < objectGenerator.transform.childCount; i++)
             {
                 Transform Children = objectGenerator.transform.GetChild(i);
-                Children.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                Rigidbody2D rd = Children.gameObject.GetComponent<Rigidbody2D>();
+                if (rd != null)
+                {
+                    rd.bodyType = RigidbodyType2D.Static;
+                }
             }
             active = false;
-            objectGenerator.GetComponent<ObjectGenerator>().activate();
+            objectGenerator.GetComponent<ObjectGenerator>().Activate();
+            objectGenerator.GetComponent<dragging>().Activate();
 
             playBtn.GetComponent<Image>().sprite = playBtnImg;
             playBtn.GetComponent<Button>().onClick.RemoveListener(pause);

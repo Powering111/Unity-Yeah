@@ -74,11 +74,12 @@ public class ObjectGenerator : MonoBehaviour
         }
     }
 
-    public void deactivate()
+    public void Deactivate()
     {
         this.active = false;
+
     }
-    public void activate()
+    public void Activate()
     {
         this.active = true;
     }
