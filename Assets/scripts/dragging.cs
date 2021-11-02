@@ -53,7 +53,6 @@ public class dragging : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // mouse is clicked.
-            Debug.Log("mouse down");
             Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit= Physics2D.Raycast(ray, Vector2.zero);
             if (hit.collider!=null)
@@ -73,7 +72,6 @@ public class dragging : MonoBehaviour
                 // UI is hit!
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
-                    Debug.Log("UI is hit!");
                 }
                 else
                 {

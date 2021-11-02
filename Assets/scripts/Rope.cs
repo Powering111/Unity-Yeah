@@ -134,4 +134,4 @@ public class Rope : MonoBehaviour
             this.posOld = pos;
         }
     }
-}
+}     

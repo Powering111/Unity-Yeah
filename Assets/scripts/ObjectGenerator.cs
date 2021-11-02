@@ -20,14 +20,12 @@ public class ObjectGenerator : MonoBehaviour
         
     }
 
+    Vector3 startPos = new Vector3(0,0,0);
     public void addRectangleObj()
     {
         if (active)
         {
-            Resolution resolution = Screen.resolutions[0];
-            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(resolution.width, resolution.height, 0));
-            pos.z = 0;
-            GameObject obj = Instantiate(RectangleObject, pos, Quaternion.identity);
+            GameObject obj = Instantiate(RectangleObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
         }
     }
@@ -35,10 +33,7 @@ public class ObjectGenerator : MonoBehaviour
     {
         if (active)
         {
-            Resolution resolution = Screen.resolutions[0];
-            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(resolution.width, resolution.height, 0));
-            pos.z = 0;
-            GameObject obj = Instantiate(CircleObject, pos, Quaternion.identity);
+            GameObject obj = Instantiate(CircleObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
         }
     }
@@ -46,10 +41,7 @@ public class ObjectGenerator : MonoBehaviour
     {
         if (active)
         {
-            Resolution resolution = Screen.resolutions[0];
-            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(resolution.width, resolution.height, 0));
-            pos.z = 0;
-            GameObject obj = Instantiate(SlopeObject, pos, Quaternion.identity);
+            GameObject obj = Instantiate(SlopeObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
         }
     }
@@ -76,11 +68,7 @@ public class ObjectGenerator : MonoBehaviour
         {
             stringEndPoint = point;
 
-            Resolution resolution = Screen.resolutions[0];
-            Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(resolution.width, resolution.height, 0));
-
-            pos.z = 0;
-            GameObject obj = Instantiate(StringObject, pos, Quaternion.identity);
+            GameObject obj = Instantiate(StringObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
             obj.GetComponent<Rope>().StartPoint = stringStartPoint;
             obj.GetComponent<Rope>().EndPoint = stringEndPoint;
@@ -96,6 +84,16 @@ public class ObjectGenerator : MonoBehaviour
             Transform Children = gameObject.transform.GetChild(i);
             Children.gameObject.GetComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Dynamic;
         }
+        this.active = false;
+    }
+    public void stop()
+    {
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            Transform Children = gameObject.transform.GetChild(i);
+            Children.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        }
+        this.active = true;
     }
     public void stop()
     {

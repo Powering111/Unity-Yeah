@@ -17,6 +17,7 @@ public class Analyser : MonoBehaviour
     {
         Vector3 velocity=gameObject.GetComponent<Rigidbody2D>().velocity;
         Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;;
+        float mass = gameObject.GetComponent<Rigidbody2D>().mass;
         Debug.Log(acceleration);
     }
 }
