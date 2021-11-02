@@ -64,7 +64,8 @@ public class dragging : MonoBehaviour
                     selectedObject.GetComponent<outline>().OnDisable();
                 }
                 select(hit.transform.gameObject);
-                offset = new Vector2(hit.transform.position.x, hit.transform.position.y) - ray;
+                Vector3 parentPos = hit.transform.parent.transform.position;
+                offset = new Vector2(parentPos.x, parentPos.y) - ray;
 
             }
             else
@@ -101,7 +102,7 @@ public class dragging : MonoBehaviour
                 // moving object to mouse position
                 Vector2 mousePos = Input.mousePosition;
                 Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-                selectedObject.transform.position = worldPos + offset;
+                selectedObject.transform.parent.transform.position = worldPos + offset;
 
             }
         }

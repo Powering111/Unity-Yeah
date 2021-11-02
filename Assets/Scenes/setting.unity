@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 1155356019}
   - component: {fileID: 1155356021}
   m_Layer: 0
-  m_Name: Square
+  m_Name: GroundObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,8 +1259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22186b98b15c5a48b191bcb2da6c8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameInput: {fileID: 1750269513}
-  massInput: {fileID: 1276393505}
+  nameInput: {fileID: 1750269515}
+  massInput: {fileID: 1276393507}
 --- !u!1 &1209462929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563574691}
   - component: {fileID: 1563574690}
+  - component: {fileID: 1563574692}
   m_Layer: 0
   m_Name: Simulator
   m_TagString: Untagged
@@ -1728,6 +1729,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1563574692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563574689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413c552974bd66d4292027d460a45a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulator: {fileID: 0}
 --- !u!1 &1717552654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,7 +1802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937c8c78cc52445cbbe905771c9d8431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
   panelObj: {fileID: 1206253725}
 --- !u!1 &1735872035
 GameObject:

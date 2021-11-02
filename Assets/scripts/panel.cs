@@ -6,7 +6,20 @@ using UnityEngine.UI;
 public class panel : MonoBehaviour
 {
     private GameObject selectedObject;
-    public GameObject nameInput, massInput;
+    public InputField nameInput, massInput;
+    private bool active;
+    public void Activate()
+    {
+        nameInput.ActivateInputField();
+        massInput.ActivateInputField();
+        active = true;
+    }
+    public void Deactivate()
+    {
+        nameInput.DeactivateInputField();
+        massInput.DeactivateInputField();
+        active = false;
+    }
 
     void Start()
     {
@@ -17,9 +30,9 @@ public class panel : MonoBehaviour
     {
         selectedObject = obj;
         float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
-        string name = selectedObject.name;
-        massInput.GetComponent<InputField>().text = mass.ToString();
-        nameInput.GetComponent<InputField>().text = name;
+        string name = selectedObject.transform.parent.name;
+        massInput.text = mass.ToString();
+        nameInput.text = name;
 
         gameObject.SetActive(true);
     }
@@ -32,18 +45,24 @@ public class panel : MonoBehaviour
 
     public void massChanged()
     {
-        float mass;
-        float.TryParse(massInput.GetComponent<InputField>().text, out mass);
-        if(mass==0)mass=1;
-        selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+        if (active)
+        {
+            float mass;
+            float.TryParse(massInput.text, out mass);
+            if (mass == 0) mass = 1;
+            selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+        }
     }
 
     public void nameChanged()
     {
-        string name=nameInput.GetComponent<InputField>().text;
-        if (name.Length > 0)
+        if (active)
         {
-            selectedObject.name = name;
+            string name = nameInput.text;
+            if (name.Length > 0)
+            {
+                selectedObject.transform.GetChild(0).name = name;
+            }
         }
     }
 

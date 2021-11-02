@@ -8,13 +8,24 @@ public class Simulator : MonoBehaviour
     public Sprite playBtnImg, pauseBtnImg;
     private bool active=false;
 
+    public void toggle()
+    {
+        if (!active)
+        {
+            play();
+        }
+        else
+        {
+            pause();
+        }
+    }
 
     public void play() {
         if (!active) {
             for (int i = 0; i < objectGenerator.transform.childCount; i++)
             {
-                Transform Children = objectGenerator.transform.GetChild(i);
-
+                Transform Children = objectGenerator.transform.GetChild(i).GetChild(0);
+                
                 Rigidbody2D rd = Children.gameObject.GetComponent<Rigidbody2D>();
                 if (rd != null)
                 { 
@@ -46,7 +57,7 @@ public class Simulator : MonoBehaviour
         {
             for (int i = 0; i < objectGenerator.transform.childCount; i++)
             {
-                Transform Children = objectGenerator.transform.GetChild(i);
+                Transform Children = objectGenerator.transform.GetChild(i).GetChild(0);
                 Rigidbody2D rd = Children.gameObject.GetComponent<Rigidbody2D>();
                 if (rd != null)
                 {
