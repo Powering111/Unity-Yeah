@@ -6,36 +6,73 @@ public class Rope : MonoBehaviour
 {
     public Transform StartPoint;
     public Transform EndPoint;
+    private bool active=false;
 
     private LineRenderer lineRenderer;
-    private List<RopeSegment> ropeSegments = new List<RopeSegment>();
+    private List<RopeSegment> ropeSegments;
     private float ropeSegLen = 0.25f;
     private int segmentLength = 35;
     private float lineWidth = 0.1f;
+    
+    
+    public void Activate()
+    {
+        
+        active = true;
+    }
 
+    public void Deactivate()
+    {
+        active = false;
+    }
+
+    void preCalculate()
+    {
+        this.ropeSegments = new List<RopeSegment>();
+
+        Vector3 delta = EndPoint.position - StartPoint.position;
+
+        float distance = Mathf.Abs(delta.magnitude);
+        ropeSegLen = distance / segmentLength;
+
+        Vector3 ropePoint = StartPoint.position;
+
+        Vector3 unit = (EndPoint.position - StartPoint.position) / segmentLength;
+
+        for (int i = 0; i < segmentLength; i++)
+        {
+            this.ropeSegments.Add(new RopeSegment(ropePoint));
+            ropePoint += unit;
+        }
+    }
     // Use this for initialization
     void Start()
     {
         this.lineRenderer = this.GetComponent<LineRenderer>();
-        //Vector3 ropeStartPoint = StartPoint.position;
-        Vector3 ropeStartPoint = new Vector3(0,0,0);
-
-        for (int i = 0; i < segmentLength; i++)
-        {
-            this.ropeSegments.Add(new RopeSegment(ropeStartPoint));
-            ropeStartPoint.y -= ropeSegLen;
-        }
+        preCalculate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.DrawRope();
+        if (active)
+        {
+            DrawRope();
+        }
+        else
+        {
+            drawLine();
+            DrawRope();
+        }
+
     }
 
     private void FixedUpdate()
     {
-        this.Simulate();
+        if (active)
+        {
+            this.Simulate();
+        }
     }
 
     private void Simulate()
@@ -121,6 +158,20 @@ public class Rope : MonoBehaviour
 
         lineRenderer.positionCount = ropePositions.Length;
         lineRenderer.SetPositions(ropePositions);
+    }
+
+    private void drawLine()
+    {
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
+
+
+        lineRenderer.positionCount = 2;
+        Vector3[] ropePosition = new Vector3[]{
+            StartPoint.position,
+            EndPoint.position
+        };
+        lineRenderer.SetPositions(ropePosition);
     }
 
     public struct RopeSegment

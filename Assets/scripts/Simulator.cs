@@ -20,6 +20,14 @@ public class Simulator : MonoBehaviour
                 { 
                     rd.bodyType = RigidbodyType2D.Dynamic; 
                 }
+                else
+                {
+                    Rope rope = Children.gameObject.GetComponent<Rope>();
+                    if(rope != null)
+                    {
+                        rope.Activate();
+                    }
+                }
             }
             active = true;
             objectGenerator.GetComponent<ObjectGenerator>().Deactivate();
@@ -43,6 +51,14 @@ public class Simulator : MonoBehaviour
                 if (rd != null)
                 {
                     rd.bodyType = RigidbodyType2D.Static;
+                }
+                else
+                {
+                    Rope rope = Children.gameObject.GetComponent<Rope>();
+                    if (rope != null)
+                    {
+                        rope.Deactivate();
+                    }
                 }
             }
             active = false;
