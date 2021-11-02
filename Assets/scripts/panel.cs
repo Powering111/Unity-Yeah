@@ -7,7 +7,7 @@ public class panel : MonoBehaviour
 {
     private GameObject selectedObject;
     public InputField nameInput, massInput;
-    private bool active;
+    private bool active=true;
     public void Activate()
     {
         nameInput.ActivateInputField();
@@ -29,8 +29,8 @@ public class panel : MonoBehaviour
     public void selectionChange(GameObject obj)
     {
         selectedObject = obj;
-        float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
         string name = selectedObject.transform.parent.name;
+        float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
         massInput.text = mass.ToString();
         nameInput.text = name;
 
@@ -49,8 +49,10 @@ public class panel : MonoBehaviour
         {
             float mass;
             float.TryParse(massInput.text, out mass);
-            if (mass == 0) mass = 1;
-            selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+            if (mass != 0)
+            {
+                selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+            }
         }
     }
 
@@ -61,7 +63,7 @@ public class panel : MonoBehaviour
             string name = nameInput.text;
             if (name.Length > 0)
             {
-                selectedObject.transform.GetChild(0).name = name;
+                selectedObject.transform.parent.name = name;
             }
         }
     }

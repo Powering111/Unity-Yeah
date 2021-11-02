@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Simulator : MonoBehaviour
 {
-    public GameObject objectGenerator, panel, playBtn;
+    public GameObject objectGenerator, Panel, playBtn;
     public Sprite playBtnImg, pauseBtnImg;
     private bool active=false;
 
@@ -48,6 +48,7 @@ public class Simulator : MonoBehaviour
             playBtn.GetComponent<Button>().onClick.RemoveListener(play);
             playBtn.GetComponent<Button>().onClick.AddListener(pause);
 
+            Panel.GetComponent<panel>().Deactivate();
         }
     }
 
@@ -79,6 +80,8 @@ public class Simulator : MonoBehaviour
             playBtn.GetComponent<Image>().sprite = playBtnImg;
             playBtn.GetComponent<Button>().onClick.RemoveListener(pause);
             playBtn.GetComponent<Button>().onClick.AddListener(play);
+
+            Panel.GetComponent<panel>().Activate();
         }
     }
 }

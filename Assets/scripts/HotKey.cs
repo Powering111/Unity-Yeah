@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HotKey : MonoBehaviour
 {
-    public Simulator simulator;
+    private Simulator simulator;
     void Start()
     {
         simulator = gameObject.GetComponent<Simulator>();
