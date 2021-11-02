@@ -13,6 +13,6 @@ public class vector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       i
+       
     }
 }
