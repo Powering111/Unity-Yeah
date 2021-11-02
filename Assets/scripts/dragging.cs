@@ -15,18 +15,16 @@ public class dragging : MonoBehaviour
 
     public void Activate()
     {
-        gameObject.GetComponent<ObjectGenerator>().play();
         active = true;
     }
     public void Deactivate()
     {
-        gameObject.GetComponent<ObjectGenerator>().stop();
         active = false;
     }
-    void select(GameObject selected)
+    public void select(GameObject selection)
     {
 
-        selectedObject = selected;
+        selectedObject = selection;
         
         selectedObject.GetComponent<outline>().OnEnable();
 
@@ -38,11 +36,12 @@ public class dragging : MonoBehaviour
 
     }
 
-    void deselect()
+    public void deselect()
     {
         if (selectedObject != null)
         {
             selectedObject.GetComponent<outline>().OnDisable();
+            panelObj.GetComponent<panel>().deselect();
         }
 
         selected = false;

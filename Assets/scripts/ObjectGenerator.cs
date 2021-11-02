@@ -8,18 +8,6 @@ public class ObjectGenerator : MonoBehaviour
     private GameObject selected;
     private bool active = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     Vector3 startPos = new Vector3(0,0,0);
     public void addRectangleObj()
     {
@@ -27,6 +15,9 @@ public class ObjectGenerator : MonoBehaviour
         {
             GameObject obj = Instantiate(RectangleObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
+            obj.name = "Rect";
+
+            obj.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
     public void addCircleObj()
@@ -35,6 +26,9 @@ public class ObjectGenerator : MonoBehaviour
         {
             GameObject obj = Instantiate(CircleObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
+            obj.name = "Circle";
+
+            obj.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
     public void addSlopeObj()
@@ -43,6 +37,9 @@ public class ObjectGenerator : MonoBehaviour
         {
             GameObject obj = Instantiate(SlopeObject, startPos, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
+            obj.name = "Slope";
+
+            obj.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
     private int stringAddingState = 0;
@@ -53,8 +50,6 @@ public class ObjectGenerator : MonoBehaviour
         if (active)
         {
             stringAddingState = 1;
-            
-
         }
     }
     public void userPoint(Transform point)
@@ -72,27 +67,19 @@ public class ObjectGenerator : MonoBehaviour
             obj.transform.parent = gameObject.transform;
             obj.GetComponent<Rope>().StartPoint = stringStartPoint;
             obj.GetComponent<Rope>().EndPoint = stringEndPoint;
-            
+
+            obj.name = "Rope";
+
             stringAddingState=0;
         }
     }
 
-    public void play()
+    public void deactivate()
     {
-        for (int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            Transform Children = gameObject.transform.GetChild(i);
-            Children.gameObject.GetComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Dynamic;
-        }
         this.active = false;
     }
-    public void stop()
+    public void activate()
     {
-        for (int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            Transform Children = gameObject.transform.GetChild(i);
-            Children.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        }
         this.active = true;
     }
 }
