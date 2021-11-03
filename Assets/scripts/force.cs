@@ -27,9 +27,31 @@ public class force : MonoBehaviour
         rot.z = Mathf.Atan(Direction.y / Direction.x) + 90;
         transform.rotation = rot;
     }
+    public GameObject getTarget()
+    {
+        return this.Target.gameObject;
+    }
     public void setTarget(Transform target)
     {
         this.Target = target;
         applyRotation();
+    }
+
+    public void select()
+    {
+        Target.gameObject.GetComponent<outline>().OnEnable();
+    }
+    
+    public string getTargetName()
+    {
+        return Target.parent.gameObject.name;
+    }
+    public float getPower()
+    {
+        return this.Power;
+    }
+    public void setPower(float power)
+    {
+        this.Power = power;
     }
 }

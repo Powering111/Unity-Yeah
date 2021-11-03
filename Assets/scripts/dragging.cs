@@ -11,7 +11,7 @@ public class dragging : MonoBehaviour
     private GameObject selectedObject;
 
     private bool active = true;
-    public GameObject panelObj;
+    public GameObject panelObj, forcePanelObj;
 
     public void Activate()
     {
@@ -33,12 +33,17 @@ public class dragging : MonoBehaviour
         {
             Debug.Log("body");
             gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
+
+            forcePanelObj.GetComponent<panel>().deselect();
             panelObj.GetComponent<panel>().selectionChange(selectedObject);
         }
         if (selection.gameObject.transform.parent.tag == "force")
         {
             Debug.Log("force");
+            selectedObject.transform.parent.GetComponent<force>().select();
+
             panelObj.GetComponent<panel>().deselect();
+            forcePanelObj.GetComponent<panel>().selectionChange(selectedObject);
         }
 
         this.selected = true;

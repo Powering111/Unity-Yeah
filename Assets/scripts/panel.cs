@@ -24,13 +24,25 @@ public class panel : MonoBehaviour
 
     public void selectionChange(GameObject obj)
     {
-        selectedObject = obj;
-        string name = selectedObject.transform.parent.name;
-        float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
-        massInput.text = mass.ToString();
-        nameInput.text = name;
+        if (obj.transform.parent.tag == "force")
+        {
+            selectedObject = obj;
+            string name = selectedObject.transform.parent.GetComponent<force>().getTargetName();
+            float power = selectedObject.transform.parent.GetComponent<force>().getPower();
 
-        gameObject.SetActive(true);
+            nameInput.text = name;
+            massInput.text = power.ToString();
+        }
+        else
+        {
+            selectedObject = obj;
+            string name = selectedObject.transform.parent.name;
+            float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
+            massInput.text = mass.ToString();
+            nameInput.text = name;
+
+            gameObject.SetActive(true);
+        }
     }
 
     public void deselect()
@@ -43,11 +55,21 @@ public class panel : MonoBehaviour
     {
         if (active)
         {
-            float mass;
-            float.TryParse(massInput.text, out mass);
-            if (mass != 0)
+            if (selectedObject.transform.parent.tag == "force")
             {
-                selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+                float power;
+                float.TryParse(massInput.text, out power);
+
+                selectedObject.transform.parent.GetComponent<force>().setPower(power);
+            }
+            else
+            {
+                float mass;
+                float.TryParse(massInput.text, out mass);
+                if (mass != 0)
+                {
+                    selectedObject.transform.parent.GetComponent<Rigidbody2D>().mass = mass;
+                }
             }
         }
     }
@@ -56,10 +78,17 @@ public class panel : MonoBehaviour
     {
         if (active)
         {
-            string name = nameInput.text;
-            if (name.Length > 0)
+            if (selectedObject.tag == "force")
             {
-                selectedObject.transform.parent.name = name;
+
+            }
+            else
+            {
+                string name = nameInput.text;
+                if (name.Length > 0)
+                {
+                    selectedObject.transform.parent.name = name;
+                }
             }
         }
     }
