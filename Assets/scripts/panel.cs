@@ -10,14 +10,10 @@ public class panel : MonoBehaviour
     private bool active=true;
     public void Activate()
     {
-        nameInput.Interactable = true;
-        massInput.Interactable = true;
         active = true;
     }
     public void Deactivate()
     {
-        nameInput.Interactable = false;
-        massInput.Interactable = false;
         active = false;
     }
 

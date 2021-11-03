@@ -61,10 +61,10 @@ public class Rope : MonoBehaviour
         }
         else
         {
-            DrawRope();
+            drawLine();
             if (Input.GetKey(KeyCode.LeftControl))
             {
-                drawLine();
+                DrawRope();
             }
         }
 

@@ -29,9 +29,17 @@ public class dragging : MonoBehaviour
         
         selectedObject.GetComponent<outline>().OnEnable();
 
-        gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
-
-        panelObj.GetComponent<panel>().selectionChange(selectedObject);
+        if (selection.gameObject.transform.parent.tag == "body")
+        {
+            Debug.Log("body");
+            gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
+            panelObj.GetComponent<panel>().selectionChange(selectedObject);
+        }
+        if (selection.gameObject.transform.parent.tag == "force")
+        {
+            Debug.Log("force");
+            panelObj.GetComponent<panel>().deselect();
+        }
 
         this.selected = true;
 
@@ -60,7 +68,7 @@ public class dragging : MonoBehaviour
 
                 // object is hit!
                 if (selectedObject != null && !selectedObject.Equals(hit.transform.gameObject))
-                {    
+                {
                     selectedObject.GetComponent<outline>().OnDisable();
                 }
                 select(hit.transform.gameObject);
@@ -77,7 +85,6 @@ public class dragging : MonoBehaviour
                 else
                 {
                     // void is hit!
-
                     selected = false;
                     if (selectedObject != null)
                     {

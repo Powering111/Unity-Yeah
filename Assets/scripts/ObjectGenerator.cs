@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectGenerator : MonoBehaviour
 {
-    public GameObject RectangleObject, CircleObject, SlopeObject, StringObject;
+    public GameObject RectangleObject, CircleObject, SlopeObject, StringObject, ForceObject;
     private GameObject selected;
     private bool active = true;
 
@@ -42,8 +42,18 @@ public class ObjectGenerator : MonoBehaviour
             obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
+
+
     private int stringAddingState = 0;
+    private int forceAddingState = 0;
     private Transform stringStartPoint,stringEndPoint;
+    public void addForceObj()
+    {
+        if (active)
+        {
+            forceAddingState = 1;
+        }
+    }
 
     public void addStringObj()
     {
@@ -54,6 +64,13 @@ public class ObjectGenerator : MonoBehaviour
     }
     public void userPoint(Transform point)
     {
+        if (forceAddingState == 1)
+        {
+            GameObject obj = Instantiate(ForceObject, startPos, Quaternion.identity);
+            obj.transform.parent = gameObject.transform;
+            obj.GetComponent<force>().setTarget(point);
+            forceAddingState = 0;
+        }
         if (stringAddingState == 1)
         {
             stringAddingState++;
