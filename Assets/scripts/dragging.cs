@@ -24,7 +24,7 @@ public class dragging : MonoBehaviour
 
     public void select(GameObject selection)
     {
-
+        deselect();
         selectedObject = selection;
         
         selectedObject.GetComponent<outline>().OnEnable();
@@ -58,6 +58,15 @@ public class dragging : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.zero);
+            if (hit.collider != null)
+            {
+                hit.transform.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+            }
+        }
         if (Input.GetMouseButtonDown(0))
         {
             // mouse is clicked.
@@ -65,8 +74,9 @@ public class dragging : MonoBehaviour
             RaycastHit2D hit= Physics2D.Raycast(ray, Vector2.zero);
             if (hit.collider!=null)
             {
-
                 // object is hit!
+
+                Debug.Log("hit");
                 if (selectedObject != null && !selectedObject.Equals(hit.transform.gameObject))
                 {
                     selectedObject.GetComponent<outline>().OnDisable();

@@ -5,7 +5,7 @@ using UnityEngine;
 public class force : MonoBehaviour
 {
     public Transform Target;
-    public Vector3 Direction;
+    public Vector3 Direction=new Vector3(1,0,0);
     public float Power=9.8f;
     // Update is called once per frame
     void Start()

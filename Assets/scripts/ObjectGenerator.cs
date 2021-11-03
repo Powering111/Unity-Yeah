@@ -17,7 +17,7 @@ public class ObjectGenerator : MonoBehaviour
             obj.transform.parent = gameObject.transform;
             obj.name = "Rect";
 
-            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
     public void addCircleObj()
@@ -28,7 +28,7 @@ public class ObjectGenerator : MonoBehaviour
             obj.transform.parent = gameObject.transform;
             obj.name = "Circle";
 
-            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
     public void addSlopeObj()
@@ -39,7 +39,7 @@ public class ObjectGenerator : MonoBehaviour
             obj.transform.parent = gameObject.transform;
             obj.name = "Slope";
 
-            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
