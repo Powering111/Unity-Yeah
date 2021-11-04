@@ -6,7 +6,7 @@ public class force : MonoBehaviour
 {
     public Transform Target;
     public Vector3 Direction=new Vector3(1,0,0);
-    public float Power=9.8f;
+    public float Power= 9.8f;
     // Update is called once per frame
     void Start()
     {
@@ -23,9 +23,12 @@ public class force : MonoBehaviour
 
     void applyRotation()
     {
-        Quaternion rot = transform.rotation;
-        rot.z = Mathf.Atan(Direction.y / Direction.x) + 90;
-        transform.rotation = rot;
+        transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y,
+            Mathf.Atan(Direction.y / Direction.x)*180/(Mathf.PI) + 90 +(Direction.x>=0 ? 180 : 0)
+        );
+        
     }
     public GameObject getTarget()
     {
@@ -37,10 +40,6 @@ public class force : MonoBehaviour
         applyRotation();
     }
 
-    public void select()
-    {
-        Target.gameObject.GetComponent<outline>().OnEnable();
-    }
     
     public string getTargetName()
     {
@@ -53,5 +52,10 @@ public class force : MonoBehaviour
     public void setPower(float power)
     {
         this.Power = power;
+    }
+    public void setRotation(Vector3 toward)
+    {
+        Direction = toward.normalized;
+        applyRotation();
     }
 }

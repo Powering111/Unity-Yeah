@@ -24,6 +24,7 @@ public class panel : MonoBehaviour
 
     public void selectionChange(GameObject obj)
     {
+        show();
         if (obj.transform.parent.tag == "force")
         {
             selectedObject = obj;
@@ -47,6 +48,7 @@ public class panel : MonoBehaviour
 
     public void deselect()
     {
+        hide();
         selectedObject = null;
         gameObject.SetActive(false);
     }

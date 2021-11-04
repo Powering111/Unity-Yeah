@@ -28,21 +28,21 @@ public class dragging : MonoBehaviour
         selectedObject = selection;
         
         selectedObject.GetComponent<outline>().OnEnable();
-
+        //Debug.Log(selectedObject.transform.parent.name);
         if (selection.gameObject.transform.parent.tag == "body")
         {
             Debug.Log("body");
             gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
 
-            forcePanelObj.GetComponent<panel>().deselect();
+            
             panelObj.GetComponent<panel>().selectionChange(selectedObject);
+            GameObject.Find("Simulator").GetComponent<Analyser>().select(selectedObject);
         }
         if (selection.gameObject.transform.parent.tag == "force")
         {
             Debug.Log("force");
-            selectedObject.transform.parent.GetComponent<force>().select();
+            //selectedObject.transform.parent.GetComponent<force>().select();
 
-            panelObj.GetComponent<panel>().deselect();
             forcePanelObj.GetComponent<panel>().selectionChange(selectedObject);
         }
 
@@ -56,6 +56,7 @@ public class dragging : MonoBehaviour
         {
             selectedObject.GetComponent<outline>().OnDisable();
             panelObj.GetComponent<panel>().deselect();
+            forcePanelObj.GetComponent<panel>().deselect();
         }
 
         selected = false;
@@ -80,12 +81,7 @@ public class dragging : MonoBehaviour
             if (hit.collider!=null)
             {
                 // object is hit!
-
-                Debug.Log("hit");
-                if (selectedObject != null && !selectedObject.Equals(hit.transform.gameObject))
-                {
-                    selectedObject.GetComponent<outline>().OnDisable();
-                }
+                Debug.Log("Object is selected.");
                 select(hit.transform.gameObject);
                 Vector3 parentPos = hit.transform.parent.transform.position;
                 offset = new Vector2(parentPos.x, parentPos.y) - ray;
@@ -120,12 +116,22 @@ public class dragging : MonoBehaviour
             // mouse dragging...
             if (selected && active)
             {
-                //object is selected
-                // moving object to mouse position
                 Vector2 mousePos = Input.mousePosition;
                 Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-                selectedObject.transform.parent.transform.position = worldPos + offset;
-
+                //object is selected
+                if (selectedObject.transform.parent.tag == "force")
+                {
+                    // rotating force to mouse position
+                    Vector3 forcePosition = selectedObject.transform.parent.transform.position;
+                    Vector3 worldPos3 = worldPos;
+                    worldPos3.z = 0;
+                    selectedObject.transform.parent.GetComponent<force>().setRotation((worldPos3 - forcePosition));
+                }
+                else
+                {
+                    // moving object to mouse position
+                    selectedObject.transform.parent.transform.position = worldPos + offset;
+                }
             }
         }
     }

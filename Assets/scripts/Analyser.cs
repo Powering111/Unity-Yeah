@@ -6,18 +6,26 @@ public class Analyser : MonoBehaviour
 {
 
     private Vector3 lastVelocity;
+    private GameObject selectedObject;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public void select(GameObject obj)
     {
-        Vector3 velocity=gameObject.GetComponent<Rigidbody2D>().velocity;
-        Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;;
-        float mass = gameObject.GetComponent<Rigidbody2D>().mass;
-        Debug.Log(acceleration);
+        this.selectedObject = obj;
     }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        Vector3 velocity=selectedObject.GetComponent<Rigidbody2D>().velocity;
+        Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
+        float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
+        lastVelocity = velocity;
+        Debug.Log(acceleration);
+
+    }
+
+
 }
