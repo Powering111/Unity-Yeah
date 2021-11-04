@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class panel : MonoBehaviour
 {
     private GameObject selectedObject;
-    public InputField nameInput, massInput;
+    public InputField nameInput, massInput, widthInput, heightInput, angleInput, rotateInput;
     private bool active=true;
     public void Activate()
     {
@@ -41,6 +41,9 @@ public class panel : MonoBehaviour
             float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
             massInput.text = mass.ToString();
             nameInput.text = name;
+            widthInput.text = selectedObject.transform.localScale.x.ToString();
+            heightInput.text = selectedObject.transform.localScale.y.ToString();
+            
 
             gameObject.SetActive(true);
         }
@@ -94,6 +97,43 @@ public class panel : MonoBehaviour
             }
         }
     }
+
+
+    public void width()
+    {
+        float width = transform.localScale.x;
+        float height = transform.localScale.y;
+        float.TryParse(widthInput.GetComponent<InputField>().text, out width);
+        selectedObject.transform.localScale = new Vector3(width, height, 0);
+    }
+    public void height()
+    {
+        float width = transform.localScale.x;
+        float height = transform.localScale.y;
+        float.TryParse(heightInput.GetComponent<InputField>().text, out height);
+        selectedObject.transform.localScale = new Vector3(width, height, 0);
+
+    }
+
+
+    public void rotate()
+    {
+        float rotate=0;
+        float.TryParse(rotateInput.GetComponent<InputField>().text, out rotate);
+
+        selectedObject.transform.Rotate(0, 0, rotate);
+
+    }
+    public void angle()
+    {
+        float angle=45;
+        float.TryParse(angleInput.GetComponent<InputField>().text, out angle);
+        float angle_rad = (angle * Mathf.PI / 180);
+        float width = transform.localScale.x;
+        float height = width * Mathf.Tan(angle_rad);
+        selectedObject.transform.localScale = new Vector3(width, height, 0);
+    }
+
 
     public void hide(){
         gameObject.SetActive(false);
