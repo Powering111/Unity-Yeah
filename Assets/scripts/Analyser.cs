@@ -1,12 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Analyser : MonoBehaviour
 {
 
     private Vector3 lastVelocity;
     private GameObject selectedObject;
+    public Text equation;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +25,6 @@ public class Analyser : MonoBehaviour
         Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
         float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
         lastVelocity = velocity;
-        Debug.Log(acceleration);
-
+        equation.text = $"F = {mass} × ({acceleration.x}î + {acceleration.y}ĵ)";
     }
-
-
 }
