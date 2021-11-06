@@ -25,6 +25,13 @@ public class Analyser : MonoBehaviour
         Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
         float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
         lastVelocity = velocity;
-        equation.text = $"F = {mass} × ({acceleration.x}î + {acceleration.y}ĵ)";
+
+        equation.text = string.Format("F = {0:0.0000} × ( {1} {2:0.0000}î {3} {4:0.0000}ĵ)"
+            , mass
+            , (acceleration.x>=0) ? '+' : '-'
+            , Mathf.Abs(acceleration.x)
+            , (acceleration.y>=0) ? '+' : '-'
+            , Mathf.Abs(acceleration.y)
+        );
     }
 }

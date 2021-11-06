@@ -12,7 +12,7 @@ public class Simulator : MonoBehaviour
     {
         Time.timeScale = 1.0f;
     }
-    void Update()
+    void LateUpdate()
     {
         if (active)
         {

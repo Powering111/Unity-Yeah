@@ -73,7 +73,7 @@ public class panel : MonoBehaviour
                 float.TryParse(massInput.text, out mass);
                 if (mass != 0)
                 {
-                    selectedObject.transform.parent.GetComponent<Rigidbody2D>().mass = mass;
+                    selectedObject.GetComponent<Rigidbody2D>().mass = mass;
                 }
             }
         }
