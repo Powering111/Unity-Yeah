@@ -43,8 +43,8 @@ public class panel : MonoBehaviour
             nameInput.text = name;
             widthInput.text = selectedObject.transform.localScale.x.ToString();
             heightInput.text = selectedObject.transform.localScale.y.ToString();
-            
 
+            rotateInput.text = selectedObject.transform.rotation.z.ToString();
             gameObject.SetActive(true);
         }
     }
@@ -121,13 +121,16 @@ public class panel : MonoBehaviour
         float rotate=0;
         float.TryParse(rotateInput.GetComponent<InputField>().text, out rotate);
 
-        selectedObject.transform.Rotate(0, 0, rotate);
+        selectedObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotate));
 
     }
     public void angle()
     {
         float angle=45;
-        float.TryParse(angleInput.GetComponent<InputField>().text, out angle);
+        if(!float.TryParse(angleInput.GetComponent<InputField>().text, out angle))
+        {
+            angle = 45;
+        }
         float angle_rad = (angle * Mathf.PI / 180);
         float width = transform.localScale.x;
         float height = width * Mathf.Tan(angle_rad);
