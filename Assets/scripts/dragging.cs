@@ -80,9 +80,20 @@ public class dragging : MonoBehaviour
 
     public void deselect()
     {
+        if (selectedObject != null)
+        {
+            selectedObject.GetComponent<outline>().OnDisable();
+        }
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
-            gameObject.transform.GetChild(i).GetChild(0).GetComponent<outline>().OnDisable();
+            try
+            {
+                gameObject.transform.GetChild(i).GetChild(0).GetComponent<outline>().OnDisable();
+            }
+            catch(Exception e)
+            {
+
+            }
             
         }
         hidePanel();

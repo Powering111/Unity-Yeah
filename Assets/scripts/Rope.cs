@@ -13,8 +13,8 @@ public class Rope : MonoBehaviour
     private float ropeSegLen = 0.25f;
     private int segmentLength = 35;
     private float lineWidth = 0.1f;
-    
-    
+    public int ConstraintCount = 1000;
+    private Simulator sim;
     public void Activate()
     {
         
@@ -50,17 +50,20 @@ public class Rope : MonoBehaviour
     {
         this.lineRenderer = this.GetComponent<LineRenderer>();
         preCalculate();
+
+        this.sim = GameObject.Find("Simulator").GetComponent<Simulator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (active)
+        if (sim.active)
         {
             DrawRope();
         }
         else
         {
+            preCalculate();
             drawLine();
             if (Input.GetKey(KeyCode.LeftControl))
             {
@@ -72,7 +75,7 @@ public class Rope : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (active)
+        if (sim.active)
         {
             this.Simulate();
         }
@@ -94,7 +97,7 @@ public class Rope : MonoBehaviour
         }
 
         //CONSTRAINTS
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < ConstraintCount; i++)
         {
             this.ApplyConstraint();
         }

@@ -16,7 +16,7 @@ public class Analyser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
     public void select(GameObject obj)
     {
@@ -35,66 +35,84 @@ public class Analyser : MonoBehaviour
     }
 
     void FixedUpdate()
-    { 
-        if (!multi)
+    {
+        if (selectedObject != null)
         {
-            Vector3 velocity = selectedObject.GetComponent<Rigidbody2D>().velocity;
-            Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
-            float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
-            lastVelocity = velocity;
-
-            equation.text = string.Format("F = {0:0.0000} × ( {1} {2:0.0000}î {3} {4:0.0000}ĵ)"
-            , mass
-            , (acceleration.x >= 0) ? '+' : '-'
-            , Mathf.Abs(acceleration.x)
-            , (acceleration.y >= 0) ? '+' : '-'
-            , Mathf.Abs(acceleration.y)
-        );
-        }
-        else
-        {
-            float mass = 0;
-
-            Vector3 com=new Vector3(0,0,0);
-
-            Debug.Log("ACCUMULATING -----------------");
-            for (int i = 0; i < objectList.Count; i++)
+            if (!multi)
             {
-                mass += objectList[i].GetComponent<Rigidbody2D>().mass;
-                Vector2 CenterOfMass = objectList[i].transform.position;
-                com += new Vector3(CenterOfMass.x, CenterOfMass.y);
+                Vector3 velocity = selectedObject.GetComponent<Rigidbody2D>().velocity;
+                Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
+                float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
+                lastVelocity = velocity;
 
-                Debug.Log(com);
+                Vector3 force = mass * acceleration;
+                equation.text = string.Format("F = {0:0.0000} × ( {1} {2:0.0000}i {3} {4:0.0000}j) = {5} {6:0.0000}i {7} {8:0.0000}j"
+                    , mass
+                    , (acceleration.x >= 0) ? '+' : '-'
+                    , Mathf.Abs(acceleration.x)
+                    , (acceleration.y >= 0) ? '+' : '-'
+                    , Mathf.Abs(acceleration.y)
+                    , (force.x >= 0) ? '+' : '-'
+                    , Mathf.Abs(force.x)
+                    , (force.y >= 0) ? '+' : '-'
+                    , Mathf.Abs(force.y)
+                );
             }
-            com /= objectList.Count;
-            Debug.Log("ACCUMULATING ---------FINISHED");
+            else
+            {
+                float mass = 0;
 
-            Vector3 velocity = (com - lastPosition) / Time.deltaTime;
-            Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
+                Vector3 com = new Vector3(0, 0, 0);
 
-            equation.text = string.Format("F = {0:0.0000} × ( {1} {2:0.0000}î {3} {4:0.0000}ĵ)"
-                , mass
-                , (acceleration.x >= 0) ? '+' : '-'
-                , Mathf.Abs(acceleration.x)
-                , (acceleration.y >= 0) ? '+' : '-'
-                , Mathf.Abs(acceleration.y)
-            );
+                Debug.Log("ACCUMULATING -----------------");
+                for (int i = 0; i < objectList.Count; i++)
+                {
+                    mass += objectList[i].GetComponent<Rigidbody2D>().mass;
+                    Vector2 CenterOfMass = objectList[i].transform.position;
+                    com += new Vector3(CenterOfMass.x, CenterOfMass.y);
 
-            lastVelocity = velocity;
-            lastPosition = com;
+                    Debug.Log(com);
+                }
+                com /= objectList.Count;
+                Debug.Log("ACCUMULATING ---------FINISHED");
+
+                Vector3 velocity = (com - lastPosition) / Time.deltaTime;
+                Vector3 acceleration = (velocity - lastVelocity) / Time.deltaTime;
+
+                Vector3 force = mass * acceleration;
+                equation.text = string.Format("F = {0:0.0000} × ( {1} {2:0.0000}i {3} {4:0.0000}j) = {5} {6:0.0000}i {7} {8:0.0000}j"
+                    , mass
+                    , (acceleration.x >= 0) ? '+' : '-'
+                    , Mathf.Abs(acceleration.x)
+                    , (acceleration.y >= 0) ? '+' : '-'
+                    , Mathf.Abs(acceleration.y)
+                    , (force.x >= 0) ? '+' : '-'
+                    , Mathf.Abs(force.x)
+                    , (force.y >= 0) ? '+' : '-'
+                    , Mathf.Abs(force.y)
+                );
+
+                lastVelocity = velocity;
+                lastPosition = com;
+
+                gameObject.transform.GetChild(0).GetComponent<arrow>().setPosition(com);
+                gameObject.transform.GetChild(0).GetComponent<arrow>().setRotation(velocity);
+
+            }
         }
-        
 
 
     }
 
     public void setMulti()
     {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
         this.objectList = new List<GameObject>();
         multi = true;
     }
     public void unsetMulti()
     {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
         Debug.Log("unsetting Multi ( analyser )");
         multi = false;
     }

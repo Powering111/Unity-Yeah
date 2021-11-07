@@ -6,7 +6,7 @@ public class Simulator : MonoBehaviour
 {
     public GameObject objectGenerator, Panel, playBtn;
     public Sprite playBtnImg, pauseBtnImg;
-    private bool active=false;
+    public bool active=false;
 
     void Start()
     {
