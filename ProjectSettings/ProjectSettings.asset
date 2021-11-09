@@ -15,7 +15,7 @@ PlayerSettings:
   companyName: GSHSCSI
   productName: "\uBB3C\uB9AC \uC2DC\uBBAC\uB808\uC774\uC158"
   defaultCursor: {fileID: 2800000, guid: dbdd5227ef52a4a44bb1e79aa7cc41f9, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 50, y: 50}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
