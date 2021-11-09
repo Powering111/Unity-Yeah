@@ -67,13 +67,14 @@ public class Analyser : MonoBehaviour
                 Debug.Log("ACCUMULATING -----------------");
                 for (int i = 0; i < objectList.Count; i++)
                 {
-                    mass += objectList[i].GetComponent<Rigidbody2D>().mass;
+                    float nowMass = objectList[i].GetComponent<Rigidbody2D>().mass;
+                    mass += nowMass;
                     Vector2 CenterOfMass = objectList[i].transform.position;
-                    com += new Vector3(CenterOfMass.x, CenterOfMass.y);
+                    com += new Vector3(CenterOfMass.x, CenterOfMass.y) * nowMass;
 
                     Debug.Log(com);
                 }
-                com /= objectList.Count;
+                com /= mass;
                 Debug.Log("ACCUMULATING ---------FINISHED");
 
                 Vector3 velocity = (com - lastPosition) / Time.deltaTime;
