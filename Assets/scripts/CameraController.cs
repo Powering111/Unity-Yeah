@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastPos = new Vector3(0, 0, 0);
+        lastPos = new Vector3(0, 0, -100);
         multiplier = 0.0045f;
         camera = GetComponent<Camera>();
     }
@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
         //Reset View
         if (Input.GetKeyDown(KeyCode.Home))
         {
-            transform.position = new Vector3(0, 0, 0);
+            transform.position = new Vector3(0, 0, -100);
             camera.orthographicSize = 5f;
         }
     }
