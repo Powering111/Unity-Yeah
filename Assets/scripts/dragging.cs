@@ -6,6 +6,13 @@ using UnityEngine.EventSystems;
 
 public class dragging : MonoBehaviour
 {
+
+    public float DoubleClickSecond = 0.25f;
+    private bool OneClick = false;
+    private double Timer = 0;
+
+
+
     private bool selected = false;
     private Vector2 offset;
     private GameObject selectedObject;
@@ -43,20 +50,18 @@ public class dragging : MonoBehaviour
             selectedObject = selection;
 
             selectedObject.GetComponent<outline>().OnEnable();
-            if (selection.gameObject.transform.parent.tag == "body")
+            if (selectedObject.transform.parent.tag == "body")
             {
                 Debug.Log("body");
                 gameObject.GetComponent<ObjectGenerator>().userPoint(selectedObject.transform);
-
-
-                panelObj.GetComponent<panel>().selectionChange(selectedObject);
                 GameObject.Find("Simulator").GetComponent<Analyser>().select(selectedObject);
+
+
             }
-            if (selection.gameObject.transform.parent.tag == "force")
+            if (selectedObject.transform.parent.tag == "force")
             {
                 Debug.Log("force");
 
-                forcePanelObj.GetComponent<panel>().selectionChange(selectedObject);
             }
 
             this.selected = true;
@@ -90,7 +95,7 @@ public class dragging : MonoBehaviour
             {
                 gameObject.transform.GetChild(i).GetChild(0).GetComponent<outline>().OnDisable();
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }
@@ -109,6 +114,10 @@ public class dragging : MonoBehaviour
 
     void Update()
     {
+
+        
+
+
         if (Input.GetMouseButtonDown(1))
         {
             Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -128,14 +137,45 @@ public class dragging : MonoBehaviour
                 // mouse is clicked.
                 Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(ray, Vector2.zero);
-
+                
                 if (hit.collider != null)
                 {
                     // object is hit!
                     //Debug.Log("Object is selected.");
-                    select(hit.transform.gameObject);
                     Vector3 parentPos = hit.transform.parent.transform.position;
                     offset = new Vector2(parentPos.x, parentPos.y) - ray;
+
+                    if (multi)
+                    {
+                        select(hit.transform.gameObject);
+                    }
+                    else
+                    {
+
+                        select(hit.transform.gameObject);
+                        if (OneClick && (((double)System.DateTime.Now.Ticks / 10000000 - Timer) > DoubleClickSecond))
+                        {
+                            OneClick = false;
+                        }
+                        if (!OneClick)
+                        {
+                            Timer = (double)System.DateTime.Now.Ticks / 10000000;
+
+                            OneClick = true;
+                        }
+                        else if (OneClick && (((double)System.DateTime.Now.Ticks /10000000 - Timer) < DoubleClickSecond))
+                        {
+                            OneClick = false;
+                            if (selectedObject.transform.parent.tag == "body")
+                            {
+                                panelObj.GetComponent<panel>().selectionChange(selectedObject);
+                            }
+                            if (selectedObject.transform.parent.tag == "force")
+                            {
+                                forcePanelObj.GetComponent<panel>().selectionChange(selectedObject);
+                            }
+                        }
+                    }
 
                 }
                 else

@@ -101,15 +101,17 @@ public class panel : MonoBehaviour
 
     public void width()
     {
-        float width = transform.localScale.x;
-        float height = transform.localScale.y;
+        float width = selectedObject.transform.localScale.x;
+        float height = selectedObject.transform.localScale.y;
+        Debug.Log(string.Format("{0}, {1}",width, height));
         float.TryParse(widthInput.GetComponent<InputField>().text, out width);
         selectedObject.transform.localScale = new Vector3(width, height, 0);
     }
     public void height()
     {
-        float width = transform.localScale.x;
-        float height = transform.localScale.y;
+        float width = selectedObject.transform.localScale.x;
+        float height = selectedObject.transform.localScale.y;
+        Debug.Log(string.Format("{0}, {1}", width, height));
         float.TryParse(heightInput.GetComponent<InputField>().text, out height);
         selectedObject.transform.localScale = new Vector3(width, height, 0);
 

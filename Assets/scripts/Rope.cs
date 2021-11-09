@@ -63,12 +63,17 @@ public class Rope : MonoBehaviour
         }
         else
         {
-            preCalculate();
+            
             drawLine();
             if (Input.GetKey(KeyCode.LeftControl))
             {
                 DrawRope();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            preCalculate();
         }
 
     }
