@@ -57,29 +57,36 @@ public class Rope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sim.active)
+        try
         {
-            DrawRope();
-        }
-        else
-        {
-            
-            drawLine();
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (sim.active)
             {
                 DrawRope();
             }
-        }
+            else
+            {
 
-        if (Input.GetKeyDown(KeyCode.Q))
+                drawLine();
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    DrawRope();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                preCalculate();
+            }
+        } catch(MissingReferenceException e)
         {
-            preCalculate();
+            Destroy(gameObject);
         }
 
     }
 
     private void FixedUpdate()
     {
+        
         if (sim.active)
         {
             this.Simulate();
