@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class force : MonoBehaviour
 {
+    public bool fix= false;
     public Transform Target;
     public Vector3 Direction=new Vector3(1,0,0);
     public float Power= 9.8f;
@@ -55,7 +56,10 @@ public class force : MonoBehaviour
     }
     public void setRotation(Vector3 toward)
     {
-        Direction = toward.normalized;
-        applyRotation();
+        if (!fix)
+        {
+            Direction = toward.normalized;
+            applyRotation();
+        }
     }
 }

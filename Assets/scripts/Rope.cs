@@ -13,8 +13,8 @@ public class Rope : MonoBehaviour
     private float ropeSegLen = 0.25f;
     private int segmentLength = 35;
     private float lineWidth = 0.1f;
-    
-    
+    public int ConstraintCount = 1000;
+    private Simulator sim;
     public void Activate()
     {
         
@@ -50,29 +50,44 @@ public class Rope : MonoBehaviour
     {
         this.lineRenderer = this.GetComponent<LineRenderer>();
         preCalculate();
+
+        this.sim = GameObject.Find("Simulator").GetComponent<Simulator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (active)
+        try
         {
-            DrawRope();
-        }
-        else
-        {
-            drawLine();
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (sim.active)
             {
                 DrawRope();
             }
+            else
+            {
+
+                drawLine();
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    DrawRope();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                preCalculate();
+            }
+        } catch(MissingReferenceException e)
+        {
+            Destroy(gameObject);
         }
 
     }
 
     private void FixedUpdate()
     {
-        if (active)
+        
+        if (sim.active)
         {
             this.Simulate();
         }
@@ -81,7 +96,7 @@ public class Rope : MonoBehaviour
     private void Simulate()
     {
         // SIMULATION
-        Vector2 forceGravity = new Vector2(0f, -1f);
+        Vector2 forceGravity = new Vector2(0f, 0f);
 
         for (int i = 1; i < this.segmentLength; i++)
         {
@@ -93,26 +108,26 @@ public class Rope : MonoBehaviour
             this.ropeSegments[i] = firstSegment;
         }
 
+
         //CONSTRAINTS
-        for (int i = 0; i < 50; i++)
-        {
+        //for (int i = 0; i < ConstraintCount; i++)
+        //{
             this.ApplyConstraint();
-        }
+        //}
     }
 
     private void ApplyConstraint()
     {
         //Constrant to First Point 
         RopeSegment firstSegment = this.ropeSegments[0];
-        firstSegment.posNow = this.StartPoint.position;
-        this.ropeSegments[0] = firstSegment;
-
-
-        //Constrant to Second Point 
         RopeSegment endSegment = this.ropeSegments[this.ropeSegments.Count - 1];
+        
+        firstSegment.posNow = this.StartPoint.position;
         endSegment.posNow = this.EndPoint.position;
+        
+        this.ropeSegments[0] = firstSegment;
         this.ropeSegments[this.ropeSegments.Count - 1] = endSegment;
-
+        for(int k = 0; k < ConstraintCount; k++)
         for (int i = 0; i < this.segmentLength - 1; i++)
         {
             RopeSegment firstSeg = this.ropeSegments[i];
@@ -132,19 +147,27 @@ public class Rope : MonoBehaviour
             }
 
             Vector2 changeAmount = changeDir * error;
-            if (i != 0)
-            {
+            //if (i != 0)
+            //{
                 firstSeg.posNow -= changeAmount * 0.5f;
                 this.ropeSegments[i] = firstSeg;
                 secondSeg.posNow += changeAmount * 0.5f;
                 this.ropeSegments[i + 1] = secondSeg;
-            }
-            else
-            {
-                secondSeg.posNow += changeAmount;
-                this.ropeSegments[i + 1] = secondSeg;
-            }
+            //}
+            //else
+            //{
+            //    secondSeg.posNow += changeAmount;
+            //    this.ropeSegments[i + 1] = secondSeg;
+            //}
+        
         }
+
+        firstSegment = this.ropeSegments[0];
+        endSegment = this.ropeSegments[this.ropeSegments.Count - 1];
+
+        this.StartPoint.position = firstSegment.posNow;
+        this.EndPoint.position = endSegment.posNow;
+
     }
 
     private void DrawRope()

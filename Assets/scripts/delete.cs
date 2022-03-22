@@ -8,6 +8,17 @@ public class delete : MonoBehaviour
 
     private bool active=false;
     public Sprite activeImg, notActiveImg;
+    public void toggle()
+    {
+        if (active)
+        {
+            Deactivate();
+        }
+        else
+        {
+            Activate();
+        }
+    }
     public void Activate()
     {
         active = true;
