@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+
 
 public class Analyser : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class Analyser : MonoBehaviour
     List<GameObject> objectList;
     private Vector3 lastVelocity;
     private Vector3 lastPosition;
+    private double recordTime;
 
     public bool multi = false;
     // Start is called before the first frame update
@@ -57,6 +60,12 @@ public class Analyser : MonoBehaviour
                     , (force.y >= 0) ? '+' : '-'
                     , Mathf.Abs(force.y)
                 );
+                if (recording)
+                {
+                    recordTime += Time.deltaTime;
+                    sw.Write(recordTime+", "+selectedObject.transform.position.x+", "+selectedObject.transform.position.y+", , "+velocity.x+", "+velocity.y+", , "+acceleration.x+", "+acceleration.y+" \n");
+                    Debug.Log(":YEAH");
+                }
             }
             else
             {
@@ -102,7 +111,6 @@ public class Analyser : MonoBehaviour
             }
         }
 
-
     }
 
     public void setMulti()
@@ -116,5 +124,33 @@ public class Analyser : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         Debug.Log("unsetting Multi ( analyser )");
         multi = false;
+    }
+
+
+    StreamWriter sw;
+    bool recording = false;
+    public void toggle()
+    {
+        if (recording)
+        {
+            stop();
+        }
+        else
+        {
+            record();
+        }
+    }
+
+    public void record()
+    {
+        sw = new StreamWriter(System.DateTime.Now.ToString("yy-MM-dd-HH-mm-ss")+".csv");
+        sw.Write("time, position, , , velocity, , ,acceleration, , \n, x, y, s, x, y, s, x, y, s, \n");
+
+        recording = true;
+    }
+    public void stop()
+    {
+        sw.Close();
+        recording = false;
     }
 }
