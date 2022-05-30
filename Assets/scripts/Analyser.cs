@@ -14,7 +14,8 @@ public class Analyser : MonoBehaviour
     private Vector3 lastVelocity;
     private Vector3 lastPosition;
     private double recordTime;
-
+    public GameObject recordBtn;
+    public Sprite recordOn, recordOff;
     public bool multi = false;
     // Start is called before the first frame update
     void Start()
@@ -129,28 +130,27 @@ public class Analyser : MonoBehaviour
 
     StreamWriter sw;
     bool recording = false;
-    public void toggle()
-    {
-        if (recording)
-        {
-            stop();
-        }
-        else
-        {
-            record();
-        }
-    }
 
     public void record()
     {
-        sw = new StreamWriter(System.DateTime.Now.ToString("yy-MM-dd-HH-mm-ss")+".csv");
-        sw.Write("time, position, , , velocity, , ,acceleration, , \n, x, y, s, x, y, s, x, y, s, \n");
-
-        recording = true;
+        if (!recording) {
+            sw = new StreamWriter(System.DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".csv");
+            sw.Write("time, position, , , velocity, , ,acceleration, , \n, x, y, s, x, y, s, x, y, s, \n");
+            recordBtn.GetComponent<Image>().sprite = recordOn;
+            recordBtn.GetComponent<Button>().onClick.RemoveListener(record);
+            recordBtn.GetComponent<Button>().onClick.AddListener(stop);
+            recording = true;
+        }
     }
     public void stop()
     {
-        sw.Close();
-        recording = false;
+        if (recording)
+        {
+            recordBtn.GetComponent<Image>().sprite = recordOff;
+            recordBtn.GetComponent<Button>().onClick.RemoveListener(stop);
+            recordBtn.GetComponent<Button>().onClick.AddListener(record);
+            sw.Close();
+            recording = false;
+        }
     }
 }

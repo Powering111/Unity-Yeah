@@ -27,6 +27,7 @@ public class panel : MonoBehaviour
         show();
         if (obj.transform.parent.tag == "force")
         {
+            // force
             selectedObject = obj;
             string name = selectedObject.transform.parent.GetComponent<force>().getTargetName();
             float power = selectedObject.transform.parent.GetComponent<force>().getPower();
@@ -36,6 +37,7 @@ public class panel : MonoBehaviour
         }
         else
         {
+            // object
             selectedObject = obj;
             string name = selectedObject.transform.parent.name;
             float mass = selectedObject.GetComponent<Rigidbody2D>().mass;
@@ -74,6 +76,15 @@ public class panel : MonoBehaviour
                 if (mass != 0)
                 {
                     selectedObject.GetComponent<Rigidbody2D>().mass = mass;
+                    if (mass >= 1000.0f)
+                    {
+                        selectedObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                    }
+                    else
+                    {
+                        selectedObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+                    }
                 }
             }
         }

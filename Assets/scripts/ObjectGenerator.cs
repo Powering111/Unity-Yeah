@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectGenerator : MonoBehaviour
 {
-    public GameObject RectangleObject, CircleObject, SlopeObject, StringObject, ForceObject;
+    public GameObject RectangleObject, CircleObject, SlopeObject, StringObject, ForceObject,DorereObject, springObject;
+    
     private GameObject selected;
     private bool active = true;
 
@@ -42,7 +43,17 @@ public class ObjectGenerator : MonoBehaviour
             obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
+    public void addDorereObj()
+    {
+        if (active)
+        {
+            GameObject obj = Instantiate(DorereObject, startPos, Quaternion.identity);
+            obj.transform.parent = gameObject.transform;
+            obj.name = "Dorere";
 
+            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        }
+    }
 
     private int stringAddingState = 0;
     private int forceAddingState = 0;
@@ -62,6 +73,19 @@ public class ObjectGenerator : MonoBehaviour
             stringAddingState = 1;
         }
     }
+
+    public void addSpringObj()
+    {
+        if (active)
+        {
+            GameObject obj = Instantiate(springObject, startPos, Quaternion.identity);
+            obj.transform.parent = gameObject.transform;
+            obj.name = "Spring";
+
+            obj.transform.GetChild(0).GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        }
+    }
+
     public void userPoint(Transform point)
     {
         if (forceAddingState == 1)
