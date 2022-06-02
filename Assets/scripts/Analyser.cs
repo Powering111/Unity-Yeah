@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System;
 
 
 public class Analyser : MonoBehaviour
@@ -64,8 +65,7 @@ public class Analyser : MonoBehaviour
                 if (recording)
                 {
                     recordTime += Time.deltaTime;
-                    sw.Write(recordTime+", "+selectedObject.transform.position.x+", "+selectedObject.transform.position.y+", , "+velocity.x+", "+velocity.y+", , "+acceleration.x+", "+acceleration.y+" \n");
-                    Debug.Log(":YEAH");
+                    sw.Write(recordTime+", "+selectedObject.transform.position.x+", "+selectedObject.transform.position.y+", "+Math.Sqrt(Math.Pow(selectedObject.transform.position.x, 2)+Math.Pow(selectedObject.transform.position.y, 2))+" , "+velocity.x+", "+velocity.y+", "+Math.Sqrt(Math.Pow(velocity.x , 2)+Math.Pow(velocity.y , 2))+", "+acceleration.x+", "+acceleration.y+", "+Math.Sqrt(Math.Pow(acceleration.x , 2)+Math.Pow(acceleration.y , 2))+"\n");
                 }
             }
             else

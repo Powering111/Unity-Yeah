@@ -48,8 +48,14 @@ public class dragging : MonoBehaviour
         {
             deselect();
             selectedObject = selection;
+            try
+            {
+                selectedObject.GetComponent<outline>().OnEnable();
+            }
+            catch (Exception)
+            {
 
-            selectedObject.GetComponent<outline>().OnEnable();
+            }
             if (selectedObject.transform.parent.tag == "body")
             {
                 Debug.Log("body");
@@ -87,7 +93,14 @@ public class dragging : MonoBehaviour
     {
         if (selectedObject != null)
         {
-            selectedObject.GetComponent<outline>().OnDisable();
+            try
+            {
+                selectedObject.GetComponent<outline>().OnDisable();
+            }
+            catch (Exception)
+            {
+
+            }
         }
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
@@ -141,7 +154,7 @@ public class dragging : MonoBehaviour
                 if (hit.collider != null)
                 {
                     // object is hit!
-                    //Debug.Log("Object is selected.");
+                    Debug.Log("Object is selected.");
                     Vector3 parentPos = hit.transform.parent.transform.position;
                     offset = new Vector2(parentPos.x, parentPos.y) - ray;
 
@@ -184,7 +197,14 @@ public class dragging : MonoBehaviour
                     selected = false;
                     if (selectedObject != null)
                     {
-                        selectedObject.GetComponent<outline>().OnDisable();
+                        try
+                        {
+                            selectedObject.GetComponent<outline>().OnDisable();
+                        }
+                        catch (Exception)
+                        {
+
+                        }
                     }
                     deselect();
 
