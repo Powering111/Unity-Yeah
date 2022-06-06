@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class panel : MonoBehaviour
 {
     private GameObject selectedObject;
-    public InputField nameInput, massInput, widthInput, heightInput, angleInput, rotateInput;
+    public InputField nameInput, massInput, widthInput, heightInput, angleInput, rotateInput, kInput;
     private bool active=true;
     public void Activate()
     {
@@ -46,7 +47,10 @@ public class panel : MonoBehaviour
             widthInput.text = selectedObject.transform.localScale.x.ToString();
             heightInput.text = selectedObject.transform.localScale.y.ToString();
 
-            rotateInput.text = selectedObject.transform.rotation.z.ToString();
+            rotateInput.text = selectedObject.transform.eulerAngles.z.ToString();
+            
+            float f = selectedObject.GetComponent<SpringJoint2D>().frequency;
+            kInput.text = (10.194 * f * f - 7.652 * f + 1.3848).ToString();
             gameObject.SetActive(true);
         }
     }
@@ -133,7 +137,7 @@ public class panel : MonoBehaviour
     {
         float rotate=0;
         float.TryParse(rotateInput.GetComponent<InputField>().text, out rotate);
-
+        Debug.Log("rotate");
         selectedObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotate));
 
     }
@@ -148,6 +152,15 @@ public class panel : MonoBehaviour
         float width = transform.localScale.x;
         float height = width * Mathf.Tan(angle_rad);
         selectedObject.transform.localScale = new Vector3(width, height, 0);
+    }
+
+    public void k()
+    {
+        float k = 0;
+        float.TryParse(kInput.GetComponent<InputField>().text, out k);
+        float frequency = (float)((Math.Sqrt(5) * Math.Sqrt(12742500 * k + 652031) + 9565) / 25485);
+        selectedObject.GetComponent<SpringJoint2D>().frequency = frequency;
+        
     }
 
 

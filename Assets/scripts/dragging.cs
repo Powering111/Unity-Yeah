@@ -157,7 +157,6 @@ public class dragging : MonoBehaviour
                     Debug.Log("Object is selected.");
                     Vector3 parentPos = hit.transform.parent.transform.position;
                     offset = new Vector2(parentPos.x, parentPos.y) - ray;
-
                     if (multi)
                     {
                         select(hit.transform.gameObject);
@@ -166,6 +165,7 @@ public class dragging : MonoBehaviour
                     {
 
                         select(hit.transform.gameObject);
+                    Debug.Log(selectedObject.transform.rotation.z);
                         if (OneClick && (((double)System.DateTime.Now.Ticks / 10000000 - Timer) > DoubleClickSecond))
                         {
                             OneClick = false;
