@@ -7,7 +7,7 @@ using System;
 public class panel : MonoBehaviour
 {
     private GameObject selectedObject;
-    public InputField nameInput, massInput, widthInput, heightInput, angleInput, rotateInput, kInput;
+    public InputField nameInput, massInput, widthInput, heightInput, angleInput, rotateInput, kInput, xInput, yInput;
     private bool active=true;
     public void Activate()
     {
@@ -35,6 +35,9 @@ public class panel : MonoBehaviour
 
             nameInput.text = name;
             massInput.text = power.ToString();
+
+            rotateInput.text = selectedObject.transform.parent.eulerAngles.z.ToString();
+
         }
         else
         {
@@ -48,9 +51,24 @@ public class panel : MonoBehaviour
             heightInput.text = selectedObject.transform.localScale.y.ToString();
 
             rotateInput.text = selectedObject.transform.eulerAngles.z.ToString();
-            
-            float f = selectedObject.GetComponent<SpringJoint2D>().frequency;
-            kInput.text = (10.194 * f * f - 7.652 * f + 1.3848).ToString();
+
+            SpringJoint2D sj = selectedObject.GetComponent<SpringJoint2D>();
+            if (sj)
+            {
+                kInput.transform.parent.gameObject.SetActive(true);
+                float f = sj.frequency;
+                kInput.text = (10.194 * f * f - 7.652 * f + 1.3848).ToString();
+
+            }
+            else
+            {
+                kInput.transform.parent.gameObject.SetActive(false);
+            }
+
+            Vector3 position = selectedObject.transform.localPosition;
+            xInput.text = position.x.ToString();
+            yInput.text = position.y.ToString();
+
             gameObject.SetActive(true);
         }
     }
@@ -163,12 +181,39 @@ public class panel : MonoBehaviour
         
     }
 
+    public void x()
+    {
+        float x;
+        float.TryParse(xInput.GetComponent<InputField>().text, out x);
+        Vector3 pos = selectedObject.transform.localPosition;
+        pos.x = x;
+        selectedObject.transform.localPosition = pos;
+        
+    }
 
+    public void y()
+    {
+
+        float y;
+        float.TryParse(yInput.GetComponent<InputField>().text, out y);
+        Vector3 pos = selectedObject.transform.localPosition;
+        pos.y = y;
+        selectedObject.transform.localPosition = pos;
+    }
     public void hide(){
         gameObject.SetActive(false);
     }
 
     public void show(){
         gameObject.SetActive(true);
+    }
+    
+    public void rotateForce()
+    {
+
+        float dir;
+        float.TryParse(rotateInput.GetComponent<InputField>().text, out dir);
+        Vector3 direction = selectedObject.transform.parent.GetComponent<force>().Direction=new Vector3(Mathf.Sin(dir * (Mathf.PI) / 180.0f), Mathf.Cos(dir * (Mathf.PI) / 180.0f), 0);
+        selectedObject.transform.parent.GetComponent<force>().applyRotation();
     }
 }

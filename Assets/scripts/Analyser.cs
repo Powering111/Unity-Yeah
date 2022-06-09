@@ -109,6 +109,12 @@ public class Analyser : MonoBehaviour
                 gameObject.transform.GetChild(0).GetComponent<arrow>().setPosition(com);
                 gameObject.transform.GetChild(0).GetComponent<arrow>().setRotation(velocity);
 
+                if (recording)
+                {
+                    recordTime += Time.deltaTime;
+                    sw.Write(recordTime + ", " + com.x + ", " + com.y + ", " + Math.Sqrt(Math.Pow(com.x, 2) + Math.Pow(com.y, 2)) + " , " + velocity.x + ", " + velocity.y + ", " + Math.Sqrt(Math.Pow(velocity.x, 2) + Math.Pow(velocity.y, 2)) + ", " + acceleration.x + ", " + acceleration.y + ", " + Math.Sqrt(Math.Pow(acceleration.x, 2) + Math.Pow(acceleration.y, 2)) + "\n");
+                }
+
             }
         }
 
@@ -134,7 +140,19 @@ public class Analyser : MonoBehaviour
     public void record()
     {
         if (!recording) {
-            sw = new StreamWriter(System.DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".csv");
+            try
+            {
+                if (!Directory.Exists("record"))
+                {
+                    Directory.CreateDirectory("record");
+                }
+
+            }
+            catch (IOException)
+            {
+            }
+
+            sw = new StreamWriter("record/"+System.DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".csv");
             sw.Write("time, position, , , velocity, , ,acceleration, , \n, x, y, s, x, y, s, x, y, s, \n");
             recordBtn.GetComponent<Image>().sprite = recordOn;
             recordBtn.GetComponent<Button>().onClick.RemoveListener(record);

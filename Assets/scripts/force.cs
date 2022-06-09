@@ -22,7 +22,7 @@ public class force : MonoBehaviour
         Target.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * Power,ForceMode2D.Force);
     }
 
-    void applyRotation()
+    public void applyRotation()
     {
         transform.eulerAngles = new Vector3(
             transform.eulerAngles.x,
