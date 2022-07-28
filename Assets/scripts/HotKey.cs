@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HotKey : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class HotKey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             generator.addStringObj();
+        }
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftControl))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
